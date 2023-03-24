@@ -1,36 +1,21 @@
 console.log('Working!');
 
-let theButton = document.querySelector('.greet')
-    theDisplay = document.querySelector('message')
+let theBox = document.querySelector('.box');
 
-// Functions are a re-runnable blocks of code that can be invoked at any time
-// the take a name and optionally some arguments that can mae the function
-// dynamic -> accept inputs, generate outputs
+// gsap is the greenstock animation library (this is called a namespace)
+// it has lots of methods you can run (these are all in the documentation)
+// the simplest is the "to" method, which takes an options object as its argument and applies the values as specified
 
-// this means that a single function can do many things,
-// depending on what data you pass to it
+gsap.to(theBox, {
+        x: 200, 
+        y: 150, 
+        borderRadius: "50%", 
+        rotation: "180deg", 
+        backgroundColor: "blue", 
+        duration: 1, ease: "elastic.out(1, 0.3)"
+    }
+);
 
-function sayHello(message = "hey there! early friday and coding! FUN!!") {
-    let displayString = "You said ";
-
-    if (event) { 
-        displayString += event.dataset.message; "You said: "
-    };
-
-    console.log(displayString);
+function myFunc(arg1, arg2) {
+    console.log(`do something else here... $(arg1) $(arg2)`);
 }
-
-function sum(a, b) {
-    console.log(a + b);
-
-    theDisplay.textContent = a + b;
-}
-
-
-
-theButton.addEventListener('click', sayHello);
-
-// throw some dfferent data at the sum function
-sum('one', 'two');
-
-sum(3, 5);
